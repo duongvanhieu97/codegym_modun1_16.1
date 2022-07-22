@@ -42,13 +42,14 @@
     //
     // let year = date.getYear();
     // alert(day + "/" + month + "/" + year);
-    let MyDate = function (day, month, year) {
+    let MyDate = function (day, month, year, date) {
 
         this.day = day;
 
         this.month = month;
 
         this.year = year;
+        this.date = date
 
         this.getDay = function () {
             return this.day;
@@ -59,6 +60,9 @@
         this.getYear = function () {
             return this.year;
         }
+        this.getDate = function () {
+            return this.date
+        }
         this.setDay = function (day) {
             this.day = day;
         }
@@ -68,21 +72,25 @@
         this.setYear = function (year) {
             this.year = year;
         }
+        this.setDate = function (date) {
+            this.date = date
+        }
 
     };
-    let date = new MyDate(2, 2, 2007);
+    let dates = new MyDate(2, 2, 2007);
+    dates.setDay(10);
+    dates.setMonth(10);
+    dates.setYear(2019);
+    dates.setDate(29)
+    let day = dates.getDay();
 
-    date.setDay(10);
-    date.setMonth(10);
-    date.setYear(2019);
+    let month = dates.getMonth();
 
-    let day = date.getDay();
+    let year = dates.getYear();
+    let date = dates.getDate()
 
-    let month = date.getMonth();
-
-    let year = date.getYear();
-
-    alert(day + "/" + month + "/" + year);
+    document.write(date + "<br>"  )
+    document.write(day + "/" + month + "/" + year );
 </script>
 </body>
 </html>
